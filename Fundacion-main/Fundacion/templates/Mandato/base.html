@@ -1,0 +1,38 @@
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Donaciones - Fundación de Apoyo</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> 
+   
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+    
+</head>
+
+<body>
+    {% if user.is_authenticated %}
+    <div class="page-header">
+        {% block titulo_principal %}{% endblock %}
+    </div>
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-8">
+                
+                {% block content %} {% endblock %}
+            </div>
+        </div>
+    </div>
+
+    <div>
+        {% block footer %} {% endblock %}
+    </div>
+    {%endif%}
+</body>
+
+</html>
+
+
